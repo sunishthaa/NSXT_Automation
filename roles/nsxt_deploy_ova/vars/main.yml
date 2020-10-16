@@ -31,8 +31,8 @@
   
   # SDDC NSX-T User Accounts
   nsxt_admin_username: "admin",
-  nsxt_admin_password: "Admin@123",
-  nsxt_cli_password: "Admin@123",
+  nsxt_admin_password: "Admin@1Admin@1",
+  nsxt_cli_password: "Admin@1Admin@1",
 
   ## Compute Manager User Permissions.
   # This account is used to connect NSX-T to the compute manager
