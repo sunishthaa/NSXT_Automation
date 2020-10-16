@@ -1,3 +1,7 @@
-- name: Check NSX-T Manager Status
-  include_role:
+---
+#Check NSX-T Manager Status
+- hosts: localhost
+  roles:
     name: nsxt_check_manager_status
+    
+     
