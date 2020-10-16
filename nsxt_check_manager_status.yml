@@ -1,0 +1,3 @@
+- name: Check NSX-T Manager Status
+  include_role:
+    name: nsxt_check_manager_status
