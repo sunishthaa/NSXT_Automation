@@ -1,6 +1,8 @@
 ---
 #Check NSX-T Manager Status
-- hosts: NSX-manager
+- hosts: localhost
+  connection: local
+  become: yes
   roles:
     name: nsxt_check_manager_status
 
