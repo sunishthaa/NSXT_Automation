@@ -1,4 +1,4 @@
 ---
-- hosts: 10.1.22.7
+- hosts: localhost
   roles:
     - nsxt_deploy_ova
