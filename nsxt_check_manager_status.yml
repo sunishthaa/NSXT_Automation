@@ -4,6 +4,7 @@
   connection: local
   become: yes
   roles:
-    name: nsxt_check_manager_status
+    - nsxt_check_manager_status
+    
 
      
