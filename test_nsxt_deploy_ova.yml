@@ -1,5 +1,4 @@
 ---
-- hosts: localhost
-  remote_user: root
+- hosts: 10.1.22.7
   roles:
     - nsxt_deploy_ova
