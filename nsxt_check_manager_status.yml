@@ -1,7 +1,7 @@
 ---
 #Check NSX-T Manager Status
 - hosts: NSX-manager
-    roles:
-      name: nsxt_check_manager_status
+  roles:
+    name: nsxt_check_manager_status
 
      
