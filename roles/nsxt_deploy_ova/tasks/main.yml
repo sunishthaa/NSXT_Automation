@@ -28,5 +28,9 @@
     
 
 - name: Check NSX-T Manager Status
-  include_role:
-    name: nsxt_check_manager_status
+  nsxt_manager_status:
+    hostname: "{{ nsx_node1.hostname }}"
+    username: "{{ nsxt_admin_username }}"
+    password: "{{ nsxt_admin_password }}"
+    validate_certs: "{{ nsxt_validate_certs }}"
+    wait_time: "{{ nsxt_status_check_delay }}"
