@@ -36,7 +36,7 @@
 
   ## Compute Manager User Permissions.
   # This account is used to connect NSX-T to the compute manager
-  nsxt_cm_username: svc_nsx@dryicelab.com,
+  nsxt_cm_username: svc_iac_nsxt@dryicelab.com,
   nsxt_cm_password: password1,
 
 
