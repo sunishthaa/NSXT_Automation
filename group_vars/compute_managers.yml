@@ -1,0 +1,16 @@
+---
+{
+# One or more compute managers that have to be registered with NSX
+  #
+  "compute_managers": [
+    {
+      "display_name": "vcenter-iac",
+      "mgmt_ip": "10.1.22.2",
+      "origin_type": "vCenter",
+      "credential_type": "UsernamePasswordLoginCredential",
+      "username": '{{ lookup("env", "VMWARE_USER") }}',
+      "password": '{{ lookup("env", "VMWARE_PASSWORD") }}',
+    }
+  ],
+
+}
