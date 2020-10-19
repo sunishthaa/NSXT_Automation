@@ -1,6 +1,5 @@
 ---
 # vars file for roles/nsxt_add_compute_manager
----
 {
 # One or more compute managers that have to be registered with NSX
   #
