@@ -78,22 +78,21 @@
   #
   "additional_nodes": [
     {
-      "hostname": "mynsx-02.mylab.local",
-      "mgmt_ip": "10.114.200.42",
-      "prefix": "27",
-      "datacenter": "Datacenter",
-      "cluster": "Management",
-      "datastore": "datastore36",
-      "portgroup": "VM Network"
+      "hostname": "iacnsxm02.dryicelabs.com",
+      "mgmt_ip": "10.1.22.4",
+      "prefix": "22",
+      "nsxt_deployment_datacenter": "IAC-PDC",
+      "nsxt_deployment_cluster": "Compute-Cluster",
+      "nsxt_deployment_datastore": "shared_storage_01",
+      "nsxt_deployment_portgroup": "vlan1002"
     },
     {
-      "hostname": "mynsx-03.mylab.local",
-      "mgmt_ip": "10.114.200.43",
-      "prefix": "27",
-      "datacenter": "Datacenter",
-      "cluster": "Management",
-      "datastore": "datastore36",
-      "portgroup": "VM Network"
-    }
+      "hostname": "iacnsxm03.dryicelabs.com",
+      "mgmt_ip": "10.1.22.5",
+      "prefix": "22",
+      "nsxt_deployment_datacenter": "IAC-PDC",
+      "nsxt_deployment_cluster": "Compute-Cluster",
+      "nsxt_deployment_datastore": "shared_storage_01",
+      "nsxt_deployment_portgroup": "vlan1002"
   ],
 }
