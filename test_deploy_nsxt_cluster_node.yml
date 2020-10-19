@@ -1,0 +1,4 @@
+---
+- hosts: localhost
+  roles:
+    - deploy_nsxt_cluster_node
