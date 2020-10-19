@@ -94,5 +94,6 @@
       "nsxt_deployment_cluster": "Compute-Cluster",
       "nsxt_deployment_datastore": "shared_storage_01",
       "nsxt_deployment_portgroup": "vlan1002"
+      }
   ],
 }
