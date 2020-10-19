@@ -79,7 +79,7 @@
   "additional_nodes": [
     {
       "hostname": "iacnsxm02.dryicelabs.com",
-      "mgmt_ip": "10.1.22.4",
+      "nsxt_network_ip_address": "10.1.22.4",
       "prefix": "24",
       "nsxt_deployment_datacenter": "IAC-PDC",
       "nsxt_deployment_cluster": "Compute-Cluster",
@@ -88,7 +88,7 @@
     },
     {
       "hostname": "iacnsxm03.dryicelabs.com",
-      "mgmt_ip": "10.1.22.5",
+      "nsxt_network_ip_address": "10.1.22.5",
       "prefix": "24",
       "nsxt_deployment_datacenter": "IAC-PDC",
       "nsxt_deployment_cluster": "Compute-Cluster",
