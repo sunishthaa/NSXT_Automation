@@ -2,7 +2,7 @@
 
 - name: Deploying additional nodes
   nsxt_manager_auto_deployment:
-      hostname: "{{ nsx_node1.mgmt_ip }}"
+      hostname: "{{ nsx_node1.nsxt_network_ip_address }}"
       username: "{{ nsxt_admin_username }}"
       password: "{{ nsxt_admin_password }}"
       validate_certs: "{{ validate_certs }}"
