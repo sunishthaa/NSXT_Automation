@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
+  connection: local
+  become: yes
   roles:
     - nsxt_add_compute_managers
     
