@@ -31,7 +31,7 @@
           - "{{ ntp_server_default }}"
           management_port_subnets:
           - ip_addresses:
-            - "{{ item.mgmt_ip }}"
+            - "{{ item.nsxt_network_ip_address }}"
             prefix_length: "{{ item.prefix }}"
       state: present
   with_items:
