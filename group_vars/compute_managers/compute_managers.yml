@@ -1,0 +1,16 @@
+---
+{
+# One or more compute managers that have to be registered with NSX
+  #
+  "compute_managers": [
+    {
+      "display_name": "vcenter",
+      "mgmt_ip": "10.114.200.6",
+      "origin_type": "vCenter",
+      "credential_type": "UsernamePasswordLoginCredential",
+      "username": "administrator@madhu.local",
+      "password": "VMware1!"
+    }
+  ],
+
+}
