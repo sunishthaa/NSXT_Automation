@@ -1,0 +1,4 @@
+---
+- hosts: localhost
+  roles:
+    - nsxt_create_ip_pools
