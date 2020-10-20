@@ -59,8 +59,8 @@
   nsxt_status_check_delay: 50,
   nsxt_default_mtu: 1600,
   
-  #NSX-T Virtul IP address
-  nsxt_cluster_VIP: "iacnsxcls.dryicelabs.com",
+  #NSX-T Virtul IP address-iacnsxcls.dryicelabs.com
+  nsxt_cluster_VIP: "10.1.22.6",
 
 
   #First NSX appliance node. Defined separate based on the consumption.
