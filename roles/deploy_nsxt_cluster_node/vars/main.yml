@@ -34,7 +34,7 @@
   dns_default_domain: 10.1.22.10,
   
   #NSX-T Gateway
-  nsxt_network_gateway: "10.1.10.254",
+  nsxt_network_gateway: "10.1.22.254",
   nsxt_network_netmask: "255.255.255.0",
 
   # NSX-T Default Deployment Variables
