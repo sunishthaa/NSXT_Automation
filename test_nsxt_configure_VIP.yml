@@ -1,0 +1,4 @@
+---
+- hosts: localhost
+  Role:
+    - nsxt_configure_VIP
