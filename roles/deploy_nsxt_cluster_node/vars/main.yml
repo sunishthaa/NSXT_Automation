@@ -58,6 +58,9 @@
   nsxt_validate_certs: False,
   nsxt_status_check_delay: 50,
   nsxt_default_mtu: 1600,
+  
+  #NSX-T Virtul IP address
+  nsxt_cluster_VIP: "iacnsxcls.dryicelabs.com",
 
 
   #First NSX appliance node. Defined separate based on the consumption.
