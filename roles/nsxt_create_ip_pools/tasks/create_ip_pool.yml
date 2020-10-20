@@ -1,11 +1,13 @@
 ---
 # tasks file for roles/nsxt_create_ip_pools
-- name: "Creating IP Pool: {{ ippool.display_name }}"
-  nsxt_ip_pools:
-    hostname: "{{ inventory_hostname }}.{{ dns_default_domain }}"
-    username: "{{ nsxt_admin_username }}"
-    password: "{{ nsxt_admin_password }}"
-    validate_certs: "{{ nsxt_validate_certs }}"
-    display_name: "{{ ippool.display_name }}"
-    subnets: "{{ ippool.subnets }}"
-    state: present
+- name: Create IP Pools
+  nsxt_policy_ip_pool:
+    hostname: "{{ nsx_node1.nsxt_network_ip_address }}"
+    username: "{{ nsxt_username }}"
+    password: "{{ nsxt_password }}"
+    validate_certs: "{{ validate_certs }}"
+    display_name: "{{ item.display_name }}"
+    pool_static_subnets: "{{ item.pool_static_subnets }}"
+    state: "{{ state }}"
+  with_items:
+    - "{{ ip_pools  }}"
