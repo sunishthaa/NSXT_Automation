@@ -25,13 +25,18 @@
       "description": "This Profile is used for ESXi Host NVDS uplink connectivity",
       "teaming":
       {  
-          "active_list": [           
+          "active_list": [  
+            {         
               "uplink_name": "Uplink_VMNIC1",
               "uplink_type": PNIC,
               "policy": Load Balance Source,        
+
+            },
+            {
               "uplink_name": "Uplink_VMNIC2",
               "uplink_type": PNIC,
-              "policy": Load Balance Source,           
+              "policy": Load Balance Source,   
+            }        
         ],
         
       },
@@ -43,14 +48,18 @@
       "description": "This Profile is used for Edge VM Embedded NVDS uplink connectivity",
       "teaming":
           { 
-            "active_list": [         
-              "uplink_name": "Uplink_VMNIC1",
-              "uplink_type": PNIC,
-              "policy": Load Balance Source,          
-              "uplink_name": "Uplink_VMNIC2",
-              "uplink_type": PNIC,
-              "policy": Load Balance Source,
-          ],
+            "active_list": [ 
+              {        
+                "uplink_name": "Uplink_VMNIC1",
+                "uplink_type": PNIC,
+                "policy": Load Balance Source,
+              },
+              {
+                "uplink_name": "Uplink_VMNIC2",
+                "uplink_type": PNIC,
+                "policy": Load Balance Source,   
+              },        
+            ],
           },
       "transport_vlan": "1004",
       "mtu": "9000",
