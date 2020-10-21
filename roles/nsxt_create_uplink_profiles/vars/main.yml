@@ -24,22 +24,20 @@
       "display_name": UP-ESXi_Host-Active_Active,
       "description": "This Profile is used for ESXi Host NVDS uplink connectivity",
       "teaming":
-      {  
-          "active_list": [  
-            {         
-              "uplink_name": "Uplink_VMNIC1",
-              "uplink_type": PNIC,
-              "policy": "Load Balance Source"        
-
-            },
-            {
-              "uplink_name": "Uplink_VMNIC2",
-              #"uplink_type": PNIC,
-              "policy": "Load Balance Source"  
-            }        
-        ],
-        
-      },
+          { 
+            "active_list": [ 
+              {        
+                "uplink_name": "Uplink_VMNIC1",
+                "uplink_type": PNIC,
+              },
+            "policy": Load Balance Source,
+              {
+                "uplink_name": "Uplink_VMNIC2",
+                "uplink_type": PNIC,                 
+              },
+            "policy": Load Balance Source        
+            ],
+          },
      "transport_vlan": "1003",
      "mtu": "9000",
     },    
@@ -52,13 +50,13 @@
               {        
                 "uplink_name": "Uplink_VMNIC1",
                 "uplink_type": PNIC,
-                "policy": "Load Balance Source"
               },
+            "policy": Load Balance Source,
               {
                 "uplink_name": "Uplink_VMNIC2",
-                "uplink_type": PNIC,
-                "policy": "Load Balance Source"   
-              },        
+                "uplink_type": PNIC,                 
+              },
+            "policy": Load Balance Source        
             ],
           },
       "transport_vlan": "1004",
