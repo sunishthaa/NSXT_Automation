@@ -10,7 +10,7 @@
     resource_type: UplinkHostSwitchProfile
     display_name: "{{ item.display_name }}"
     mtu: "{{ item.mtu }}" 
-    teaming: "{{ item.active_list }}"
+    teaming: "{{ item.teaming }}"
     transport_vlan: "{{ item.transport_vlan }}"
     state: "present"
   with_items:
