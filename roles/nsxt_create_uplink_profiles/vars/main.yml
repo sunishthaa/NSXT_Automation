@@ -1,0 +1,46 @@
+---
+# vars file for roles/nsxt_create_uplink_profiles
+
+ # Var and Answer file for Uplink Profiles
+    uplink_profiles:
+    - display_name: UP-ESXi_Host-Active_Active
+    - description: "This Profile is used for ESXi Host NVDS uplink connectivity"
+    - mtu: 9000
+      teaming:
+        active_list:
+        - uplink_name: "Uplink_VMNIC1"
+          uplink_type: PNIC
+        policy: Load Balance Source
+      transport_vlan: 1003
+      
+    - display_name: UP-Edge_VM-Active_Active
+    - description: "This Profile is used for Edge VM Embedded NVDS uplink connectivity"
+    - mtu: 9000
+      teaming:
+        active_list:
+        - uplink_name: "Uplink_VMNIC2"
+          uplink_type: PNIC
+        policy: Load Balance Source
+      transport_vlan: 1004
+      
+{   
+    # NSX-T Misc Variables
+    nsxt_ssh_enabled: True,
+    nsxt_validate_certs: False,
+    nsxt_status_check_delay: "50",
+    nsxt_default_mtu: "1600",
+    "state": "present",
+    
+    # NSXT Manager Nodes
+   "nsx_node1": {
+      "hostname": "iacnsxm01.dryicelabs.com",
+      "nsxt_network_ip_address": "10.1.22.3",
+      "nsxt_deployment_datacenter": "IAC-PDC",
+      "nsxt_deployment_cluster": "Compute-Cluster",
+      "nsxt_deployment_datastore": "shared_storage_01",
+      "nsxt_deployment_portgroup": "vlan1002"
+     }, 
+     
+  }
+
+ 
