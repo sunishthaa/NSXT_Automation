@@ -7,7 +7,7 @@
     password: "{{ nsxt_password }}"
     validate_certs: "{{ nsxt_validate_certs }}"
     display_name: "{{ item.display_name }}"
-    pool_static_subnets: "{{ item.ip_pools.pool_static_subnets }}"
+    pool_static_subnets: "{{ item.pool_static_subnets }}"
     state: "{{ state }}"
   with_items:
     - "{{ ip_pools  }}"
