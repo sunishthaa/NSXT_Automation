@@ -6,7 +6,6 @@
     username: "{{ nsxt_username }}"
     password: "{{ nsxt_password }}"
     validate_certs: "{{ nsxt_validate_certs }}"
-    validate_certs: "False"
     resource_type: UplinkHostSwitchProfile
     display_name: "{{ item.display_name }}"
     mtu: "{{ item.mtu }}" 
