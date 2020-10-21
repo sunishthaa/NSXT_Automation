@@ -1,6 +1,6 @@
 ---
 # vars file for roles/nsxt_create_uplink_profiles
-
+{
  # Var and Answer file for Uplink Profiles
     uplink_profiles:
     - display_name: UP-ESXi_Host-Active_Active
@@ -23,7 +23,6 @@
         policy: Load Balance Source
       transport_vlan: 1004
       
-{   
     # NSX-T Misc Variables
     nsxt_ssh_enabled: True,
     nsxt_validate_certs: False,
