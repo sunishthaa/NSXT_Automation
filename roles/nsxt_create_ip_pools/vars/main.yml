@@ -37,7 +37,7 @@
       "display_name": "TP-ESXi_Host-VLAN_1003",
       "pool_static_subnets": [
         {
-          "display_name": "TP_ip_pool_subnet_VLAN_1003",
+          "display_name": "TP-ESXi_Host-VLAN_1003",
           "state": "present",
           "allocation_ranges": [
             {
@@ -54,7 +54,8 @@
       "display_name": "TP-Edge_VM-VLAN_1004",
       "pool_static_subnets": [
         {
-          "display_name": "TP-ip_pool-subnet_VLAN_1004",
+          #TP-ip_pool-subnet_VLAN_1004
+          "display_name": "TP-Edge_VM-VLAN_1004",
           "state": "present",
           "allocation_ranges": [
             {
