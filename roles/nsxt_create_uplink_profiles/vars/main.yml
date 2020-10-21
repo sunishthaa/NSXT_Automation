@@ -1,2 +1,72 @@
 ---
 # vars file for roles/nsxt_create_uplink_profiles
+{   
+    # NSX-T Misc Variables
+    nsxt_ssh_enabled: True,
+    nsxt_validate_certs: False,
+    nsxt_status_check_delay: "50",
+    nsxt_default_mtu: "1600",
+    "state": "present",
+    
+   "nsx_node1": {
+      "hostname": "iacnsxm01.dryicelabs.com",
+      "nsxt_network_ip_address": "10.1.22.3",
+      "nsxt_deployment_datacenter": "IAC-PDC",
+      "nsxt_deployment_cluster": "Compute-Cluster",
+      "nsxt_deployment_datastore": "shared_storage_01",
+      "nsxt_deployment_portgroup": "vlan1002"
+  },
+  
+  "transport_zones": [
+    {
+      "display_name": "TZ-Overlay",
+      "description": "This Transport Zone allows workload VMs in Overlay network to communicate with each other.
+ It also allows communication over Geneve tunnels between Transport Nodes",
+      "transport_type": "OVERLAY",
+      "host_switch_name": "nvds01"
+    },
+    {
+      "display_name": "TZ-VLAN",
+      "description": "This Transport Zone allows workload VMs in VLAN network to communicate with each othere",
+      "transport_type": "VLAN",
+      "host_switch_name": "nvds01"
+    }
+  ],
+
+  "ip_pools": [
+    {
+      "display_name": "TP-ESXi_Host-VLAN_1003",
+      "pool_static_subnets": [
+        {
+          "display_name": "TP_ip_pool_subnet_VLAN_1003",
+          "state": "present",
+          "allocation_ranges": [
+            {
+              "start": "10.1.23.50",
+              "end": "10.1.23.59"
+            }
+          ],
+          "gateway_ip": "10.1.23.254",
+          "cidr": "10.1.23.0/24"
+        }
+      ]
+    },
+    {
+      "display_name": "TP-Edge_VM-VLAN_1004",
+      "pool_static_subnets": [
+        {
+          "display_name": "TP_ip_pool_subnet_VLAN_1004",
+          "state": "present",
+          "allocation_ranges": [
+            {
+              "start": "10.1.24.50",
+              "end": "10.1.24.59"
+            }
+          ],
+          "gateway_ip": "10.1.24.254",
+          "cidr": "10.1.24.0/24"
+        }
+      ]
+    }
+  ],
+}
