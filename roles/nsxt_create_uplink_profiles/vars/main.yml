@@ -53,7 +53,7 @@
               "uplink_type": PNIC,
               "policy": Load Balance Source,
             }
-            {#
+            #{
              # "uplink_name": "Uplink_VMNIC2",
              # "uplink_type": PNIC,
              # "policy": Load Balance Source,
