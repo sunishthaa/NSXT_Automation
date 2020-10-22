@@ -21,4 +21,4 @@ transport_node_collections:
     resource_type: TransportNodeCollection
     compute_manager_name: '{{ lookup("env", "VMWARE_HOST") }}'
     cluster_name: Compute-Cluster
-    transport_node_profile_name: UP-ESXi_Host-Active_Active
+    transport_node_profile_name: TNP-Compute-1
