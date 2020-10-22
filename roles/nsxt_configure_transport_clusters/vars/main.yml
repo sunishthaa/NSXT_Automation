@@ -19,6 +19,6 @@ transport_node_collections:
   - display_name: Compute-Cluster-collection
     description: TNP for Compute-Cluster
     resource_type: TransportNodeCollection
-    compute_manager_name: '{{ lookup("env", "VMWARE_HOST") }}'
+    compute_manager_name: vcenter-iac
     cluster_name: Compute-Cluster
     transport_node_profile_name: TNP-Compute-1
