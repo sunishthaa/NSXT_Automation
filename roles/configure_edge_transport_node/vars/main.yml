@@ -1,3 +1,45 @@
----
-
- #defaults file for iis_demo
+edge_transport_nodes:
+- display_name: TN-Edge
+  host_switches:
+  - host_switch_profiles:
+    - name: UP-Edge_VM-Active_Active
+      type: UplinkHostSwitchProfile
+    host_switch_name: nvds01
+    host_switch_mode: STANDARD
+    pnics:
+    - device_name: "vmnic2"
+      uplink_name: "Uplink_VMNIC1"
+    ip_assignment_spec:
+      resource_type: StaticIpPoolSpec
+      ip_pool_name: "TP-Edge_VM-VLAN_1004"
+    transport_zone_endpoints:
+    - transport_zone_name: "TZ-VLAN"
+   transport_zone_endpoints:
+   - transport_zone_name: "TZ-Overlay"
+  node_deployment_info:
+    resource_type: "EdgeNode"
+    display_name: "EdegeNode1"
+    ip_addresses:
+    deployment_type: "VIRTUAL_MACHINE"
+    deployment_config:
+      form_factor: "SMALL"
+      node_user_settings:
+        cli_password: "Admin@1Admin@1"
+        root_password: "Admin@1Admin@1"
+      vm_deployment_config:
+        placement_type: VsphereDeploymentConfig
+        vc_name: '{{ lookup("env", "VMWARE_HOST") }}'
+        vc_username: '{{ lookup("env", "VMWARE_USER") }}'
+        vc_password: '{{ lookup("env", "VMWARE_PASSWORD") }}'
+        data_network:
+        - vlan1002
+        management_network: "vlan1002"
+        hostname: "EdgeVM1"
+        compute: "Compute-Cluster"
+        storage: "shared_storage_02"
+        default_gateway_addresses: 10.1.20.254
+        management_port_subnets: 10.1.20.2/24
+        dns_servers: 10.1.22.10
+        search_domains: dryicelabs.com
+        allow_ssh_root_login: yes
+        enable_ssh: true
