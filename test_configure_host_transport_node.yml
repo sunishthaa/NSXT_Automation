@@ -1,4 +1,0 @@
----
-- hosts: localhost
-  roles:
-   - configure_host_transport_node

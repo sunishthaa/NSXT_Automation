@@ -1,0 +1,4 @@
+---
+- hosts: localhost
+  roles:
+   - nsxt_configure_transport_clusters
