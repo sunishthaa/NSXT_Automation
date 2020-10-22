@@ -15,10 +15,10 @@ nsx_node1:
   nsxt_deployment_datastore: shared_storage_01
   nsxt_deployment_portgroup: vlan1002
   nsxt_network_ip_address: 10.1.22.3
-nsxt_transport_node_collections:
-  - display_name: "Compute-Cluster-collection"
+transport_node_collections:
+  - display_name: workload-cluster-1-collection
+    description: TNP for cluster1
     resource_type: TransportNodeCollection
-    description: Transport Node Collections demo
-    compute_manager_name: '{{ lookup("env", "VMWARE_HOST") }}'
-    cluster_name: Compute-Cluster
-    transport_node_profile_name: "UP-ESXi_Host-Active_Active"
+    compute_manager_name: vcenter7
+    cluster_name: workload-cluster1
+    transport_node_profile_name: TNP-1
