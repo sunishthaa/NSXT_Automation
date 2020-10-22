@@ -20,8 +20,8 @@ transport_node_profiles:
           - name: 'LLDP [Send Packet Enabled]'
             type: LldpHostSwitchProfile
         pnics:
-          - device_name: '{{ vmnic2 }}'
-            uplink_name: '{{ Uplink_VMNIC1 }}'
+          - device_name: vmnic2 
+            uplink_name: Uplink_VMNIC1
         ip_assignment_spec:
           resource_type: StaticIpPoolSpec
           ip_pool_name: TP-ESXi_Host-VLAN_1003
