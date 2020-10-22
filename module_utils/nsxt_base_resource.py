@@ -117,6 +117,8 @@ class NSXTBaseRealizableResource(ABC):
             _, self.existing_resource = self._send_request_to_API(
                 "/" + self.id, ignore_error=False,
                 accepted_error_codes=set([404]))
+            self.existing_resource_revision = self.existing_resource[
+                '_revision']
             # As Policy API's PATCH requires all attributes to be filled,
             # we fill the missing resource params (the params not specified)
             # by user using the existing params
@@ -125,6 +127,10 @@ class NSXTBaseRealizableResource(ABC):
         except Exception as err:
             # the resource does not exist currently on the manager
             self.existing_resource = None
+            self.existing_resource_revision = None
+        finally:
+            self._clean_none_resource_params(
+                self.existing_resource, self.nsx_resource_params)
         self._achieve_state(resource_params, successful_resource_exec_logs)
 
     @classmethod
@@ -609,17 +615,30 @@ class NSXTBaseRealizableResource(ABC):
             self.nsx_resource_params['_revision'] = \
                 self.existing_resource['_revision']
             try:
-                _, resp = self._send_request_to_API(
+                _, patch_resp = self._send_request_to_API(
                     suffix="/"+self.id, method="PATCH",
                     data=self.nsx_resource_params)
-                successful_resource_exec_logs.append({
-                    "changed": True,
-                    "id": self.id,
-                    "body": str(resp),
-                    "message": "%s with id %s updated." %
-                    (self.get_resource_name(), self.id),
-                    "resource_type": self.get_resource_name()
-                })
+                # Get the resource again and compare version numbers
+                _, updated_resource_spec = self._send_request_to_API(
+                    suffix="/"+self.id, method="GET")
+                if updated_resource_spec[
+                        '_revision'] != self.existing_resource_revision:
+                    successful_resource_exec_logs.append({
+                        "changed": True,
+                        "id": self.id,
+                        "body": str(patch_resp),
+                        "message": "%s with id %s updated." %
+                        (self.get_resource_name(), self.id),
+                        "resource_type": self.get_resource_name()
+                    })
+                else:
+                    successful_resource_exec_logs.append({
+                        "changed": False,
+                        "id": self.id,
+                        "message": "%s with id %s already exists." %
+                        (self.get_resource_name(), self.id),
+                        "resource_type": self.get_resource_name()
+                    })
             except Exception as err:
                 srel = successful_resource_exec_logs
                 self.module.fail_json(msg="Failed to update %s with id %s."
@@ -822,3 +841,15 @@ class NSXTBaseRealizableResource(ABC):
                 resource_params[k] = v
             elif type(v).__name__ == 'dict':
                 self._fill_missing_resource_params(v, resource_params[k])
+
+    def _clean_none_resource_params(self, existing_params, resource_params):
+        keys_to_remove = []
+        for k, v in resource_params.items():
+            if v is None and (
+                    existing_params is None or k not in existing_params):
+                keys_to_remove.append(k)
+        for key in keys_to_remove:
+            resource_params.pop(key)
+        for k, v in resource_params.items():
+            if type(v).__name__ == 'dict':
+                self._clean_none_resource_params(existing_params, v)
