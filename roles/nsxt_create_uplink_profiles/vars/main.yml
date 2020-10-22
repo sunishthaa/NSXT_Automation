@@ -20,6 +20,7 @@ uplink_profiles:
     teaming:
       active_list:
         - uplink_name: "Uplink_VMNIC1"
+          uplink_type: PNIC
         - uplink_name: "Uplink_VMNIC2"
           uplink_type: PNIC
       policy: Load Balance Source     
@@ -31,6 +32,7 @@ uplink_profiles:
     teaming:
       active_list:
         - uplink_name: "Uplink_VMNIC1"
+          uplink_type: PNIC
         - uplink_name: "Uplink_VMNIC2"
           uplink_type: PNIC
       policy: Load Balance Source
