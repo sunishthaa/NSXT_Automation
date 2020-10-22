@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  roles:
+   - nsxt_create_transport_profiles
+    
