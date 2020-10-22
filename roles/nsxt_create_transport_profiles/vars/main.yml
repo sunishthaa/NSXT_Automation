@@ -17,7 +17,7 @@ transport_node_profiles:
     description: Compute Transport Node Profile
     host_switches:
       - host_switch_name: nvds01
-        host_switch_type: N-VDS
+        host_switch_type: NVDS
         host_switch_mode: STANDARD
         host_switch_profiles:
           - name: UP-ESXi_Host-Active_Active
