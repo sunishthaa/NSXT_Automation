@@ -1,0 +1,18 @@
+---
+# tasks file for roles/nsxt_create_transport_profiles
+- name: Create Transport Node Profiles
+  nsxt_transport_node_profiles:
+    hostname: "{{ nsx_node1.nsxt_network_ip_address }}"
+    username: "{{ nsxt_username }}"
+    password: "{{ nsxt_password }}"
+    validate_certs: "{{ nsxt_validate_certs }}"
+    resource_type: TransportNodeProfile
+    display_name: "{{ item.display_name }}"
+    description: "{{ item.description }}"
+    host_switch_spec:
+      resource_type: StandardHostSwitchSpec
+      host_switches: "{{ item.host_switches }}"
+    transport_zone_endpoints: "{{ item.transport_zone_endpoints }}"
+    state: "{{ state }}"
+  with_items:
+    - "{{ transport_node_profiles }}"
