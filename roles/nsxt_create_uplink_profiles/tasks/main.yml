@@ -8,7 +8,7 @@
     validate_certs: "{{ nsxt_validate_certs }}"
     resource_type: UplinkHostSwitchProfile
     display_name: "{{ item.display_name }}"
-    description: "{{ description }}"
+    description: "{{ item.description }}"
     mtu: "{{ item.mtu }}" 
     teaming: "{{ item.teaming }}"
     transport_vlan: "{{ item.transport_vlan }}"
