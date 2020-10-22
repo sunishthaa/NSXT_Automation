@@ -31,7 +31,7 @@ uplink_profiles:
       active_list: 
       teaming:
         active_list:
-        - uplink_name: "Uplink_VMNIC1"
+        - uplink_name: "Uplink_VMNIC2"
           uplink_type: PNIC
         policy: FAILOVER_ORDER
     transport_vlan: "1004"
