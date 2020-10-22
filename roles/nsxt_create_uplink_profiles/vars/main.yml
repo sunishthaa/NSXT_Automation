@@ -23,7 +23,7 @@ uplink_profiles:
           uplink_type: PNIC
         - uplink_name: "Uplink_VMNIC2"
           uplink_type: PNIC
-      policy: Load Balance Source     
+      policy: LOADBALANCE_SRCID     
     transport_vlan: "1003"
 
   - description: "This Profile is used for Edge VM Embedded NVDS uplink connectivity"
@@ -35,5 +35,5 @@ uplink_profiles:
           uplink_type: PNIC
         - uplink_name: "Uplink_VMNIC2"
           uplink_type: PNIC
-      policy: Load Balance Source
+      policy: LOADBALANCE_SRCID
     transport_vlan: "1004"
