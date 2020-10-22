@@ -2,9 +2,9 @@
 # tasks file for roles/nsxt_configure_transport_clusters
 - name: "Configure Transport Cluster: {{ cls }}"
   nsxt_transport_node_collections:
-    hostname: "{{ inventory_hostname }}.{{ dns_default_domain }}"
-    username: "{{ nsxt_admin_username }}"
-    password: "{{ nsxt_admin_password }}"
+    hostname: "{{ nsx_node1.nsxt_network_ip_address}}"
+    username: "{{ nsxt_username }}"
+    password: "{{ nsxt_password }}"
     validate_certs: "{{ nsxt_validate_certs }}"
     display_name: "TNC-{{ cls }}"
     resource_type: "TransportNodeCollection"
@@ -13,6 +13,3 @@
     cluster_name: "{{ cls }}"
     transport_node_profile_name: "{{ nsxt_transport_node_profile_name }}"
     state: present
-  loop: "{{ cm.transport_clusters }}"
-  loop_control:
-    loop_var: cls
