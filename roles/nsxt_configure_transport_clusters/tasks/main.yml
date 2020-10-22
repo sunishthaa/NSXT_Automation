@@ -1,6 +1,6 @@
 ---
 # tasks file for roles/nsxt_configure_transport_clusters
-- name: "Configure Transport Cluster: "{{ cluster_name }}"
+- name: "Configure Transport Cluster:"
   nsxt_transport_node_collections:
     hostname: "{{ nsx_node1.nsxt_network_ip_address}}"
     username: "{{ nsxt_username }}"
