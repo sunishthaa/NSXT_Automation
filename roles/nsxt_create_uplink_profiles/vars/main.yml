@@ -17,15 +17,11 @@ uplink_profiles:
   - description: "This Profile is used for ESXi Host NVDS uplink connectivity"
     display_name: UP-ESXi_Host-Active_Active
     mtu: "9000"
-    teaming: 
-      active_list: 
-      - uplink_name: Uplink_VMNIC1
+    teaming:
+      active_list:
+      - uplink_name: "Uplink_VMNIC1"
         uplink_type: PNIC
-        policy: "FAILOVER_ORDER"
-        
-      - uplink_name: Uplink_VMNIC2
-        uplink_type: PNIC
-      policy: "FAILOVER_ORDER"
+      policy: FAILOVER_ORDER     
     transport_vlan: "1003"
 
   - description: "This Profile is used for Edge VM Embedded NVDS uplink connectivity"
@@ -33,11 +29,9 @@ uplink_profiles:
     mtu: "9000"
     teaming: 
       active_list: 
-      - uplink_name: Uplink_VMNIC1
-        uplink_type: PNIC
-        policy: "FAILOVER_ORDER"
-        
-      - uplink_name: Uplink_VMNIC2
-        uplink_type: PNIC
-      policy: "FAILOVER_ORDER"
+      teaming:
+        active_list:
+        - uplink_name: "Uplink_VMNIC1"
+          uplink_type: PNIC
+        policy: FAILOVER_ORDER
     transport_vlan: "1004"
