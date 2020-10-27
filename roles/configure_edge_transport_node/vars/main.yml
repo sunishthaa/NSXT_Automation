@@ -21,9 +21,9 @@ edge_transport_nodes:
       type: UplinkHostSwitchProfile
     host_switch_name: nvds01
     host_switch_mode: STANDARD
-    pnics:
-    - device_name: "vmnic2"
-      uplink_name: "Uplink_VMNIC1"
+   # pnics:
+    #- device_name: "vmnic2"
+     # uplink_name: "Uplink_VMNIC1"
     ip_assignment_spec:
       resource_type: StaticIpPoolSpec
       ip_pool_name: "TP-Edge_VM-VLAN_1004"
