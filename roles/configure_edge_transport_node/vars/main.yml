@@ -58,7 +58,9 @@ edge_transport_nodes:
           - ip_addresses:
               - 10.1.20.2
             prefix_length: 24
-        dns_servers: 10.1.22.10
-        search_domains: dryicelabs.com
+        dns_servers: 
+        - 10.1.22.10
+        search_domains: 
+        - dryicelabs.com
         allow_ssh_root_login: yes
         enable_ssh: true
