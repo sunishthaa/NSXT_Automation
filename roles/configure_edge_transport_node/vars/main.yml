@@ -1,5 +1,5 @@
 ---
-# vars file for roles/nsxt_create_transport_profiles
+# vars file for roles/nsxt_create_edge_transport_Node
 nsxt_ssh_enabled: true
 nsxt_validate_certs: false
 nsxt_status_check_delay: '50'
@@ -34,7 +34,7 @@ edge_transport_nodes:
   node_deployment_info:
     resource_type: "EdgeNode"
     display_name: "iacedge01.dryicelabs.com"
-    ip_addresses:
+    ip_addresses:["10.1.20.2"]
     deployment_type: "VIRTUAL_MACHINE"
     deployment_config:
       form_factor: "SMALL"
@@ -55,7 +55,7 @@ edge_transport_nodes:
         default_gateway_addresses: 
         - 10.1.20.254
         management_port_subnets: 
-        - 10.1.20.2/24
+        - 10.1.20.0/24
         dns_servers: 10.1.22.10
         search_domains: dryicelabs.com
         allow_ssh_root_login: yes
