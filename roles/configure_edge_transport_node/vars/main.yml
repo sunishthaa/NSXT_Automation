@@ -49,12 +49,12 @@ edge_transport_nodes:
         data_networks:
         - vlan1002
         management_network: "esxi-dvpg"
-        hostname: "Edgenode01"
+        hostname: "iacedge01.dryicelabs.com"
         compute: "Compute-Cluster"
         storage: "shared_storage_02"
-        default_gateway_addresses: 10.1.20.254
-        management_port_subnets: 10.1.20.2/24
-        dns_servers: 10.1.22.10
+        default_gateway_addresses: "10.1.20.254"
+        management_port_subnets: "10.1.20.2/24"
+        dns_servers: "10.1.22.10"
         search_domains: dryicelabs.com
         allow_ssh_root_login: yes
         enable_ssh: true
