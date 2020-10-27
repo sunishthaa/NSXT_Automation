@@ -1,16 +1,17 @@
 ---
 - name: Create Edge transport node
   nsxt_transport_nodes:
-    hostname: "{{hostname}}"
-    username: "{{username}}"
-    password: "{{password}}"
-    validate_certs: False
-    display_name: "{{item.display_name}}"
+    hostname: "{{ nsx_node1.nsxt_network_ip_address }}"
+    username: "{{ nsxt_username }}"
+    password: "{{ nsxt_password }}"
+    validate_certs: "{{ nsxt_validate_certs }}"
+    display_name: "{{display_name}}"
+    description: "Edge transport node test deployment"
     host_switch_spec:
       resource_type: StandardHostSwitchSpec
       host_switches: "{{item.host_switches}}"
     transport_zone_endpoints: "{{item.transport_zone_endpoints}}"
     node_deployment_info: "{{item.node_deployment_info}}"
-      
+    state: present
   with_items:
-    - "{{transport_nodes}}"
+    - "{{edge_transport_nodes}}"
