@@ -43,7 +43,7 @@ edge_transport_nodes:
         root_password: "Admin@1Admin@1"
       vm_deployment_config:
         placement_type: VsphereDeploymentConfig
-        vc_name: '{{ lookup("env", "VMWARE_HOST") }}'
+        vc_name: "vcenter-iac"                  #display name used at the time of add compute manager
         vc_username: '{{ lookup("env", "VMWARE_USER") }}'
         vc_password: '{{ lookup("env", "VMWARE_PASSWORD") }}'
         data_network:
