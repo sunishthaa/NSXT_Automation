@@ -1,5 +1,5 @@
 edge_transport_nodes:
-- display_name: TN-Edge
+- display_name: Edge-Node-1
   host_switches:
   - host_switch_profiles:
     - name: UP-Edge_VM-Active_Active
@@ -18,7 +18,7 @@ edge_transport_nodes:
    - transport_zone_name: "TZ-Overlay"
   node_deployment_info:
     resource_type: "EdgeNode"
-    display_name: "EdegeNode1"
+    display_name: "iacedge01.dryicelabs.com"
     ip_addresses:
     deployment_type: "VIRTUAL_MACHINE"
     deployment_config:
@@ -33,8 +33,8 @@ edge_transport_nodes:
         vc_password: '{{ lookup("env", "VMWARE_PASSWORD") }}'
         data_network:
         - vlan1002
-        management_network: "vlan1002"
-        hostname: "EdgeVM1"
+        management_network: "esxi-dvpg"
+        hostname: "Edgenode01"
         compute: "Compute-Cluster"
         storage: "shared_storage_02"
         default_gateway_addresses: 10.1.20.254
