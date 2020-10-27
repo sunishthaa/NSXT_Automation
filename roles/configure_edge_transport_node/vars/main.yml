@@ -17,12 +17,12 @@ edge_transport_nodes:
 - display_name: Edge-Node-1
   host_switches:
   - host_switch_profiles:
-    - name: UP-Edge_VM-Active_Active
+    - name: UP-ESXi_Host-Active_Active                      # will be used when multiple physical nics are available UP-Edge_VM-Active_Active
       type: UplinkHostSwitchProfile
     host_switch_name: nvds01
     host_switch_mode: STANDARD
     pnics:
-    - device_name: "vmnic1"
+    - device_name: "vmnic2"
       uplink_name: "Uplink_VMNIC1"
     ip_assignment_spec:
       resource_type: StaticIpPoolSpec
