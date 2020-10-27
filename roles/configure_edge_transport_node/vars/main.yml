@@ -34,7 +34,7 @@ edge_transport_nodes:
   node_deployment_info:
     resource_type: "EdgeNode"
     display_name: "iacedge01.dryicelabs.com"
-    ip_addresses: ["10.1.20.2"]
+    ip_addresses: 
     deployment_type: "VIRTUAL_MACHINE"
     deployment_config:
       form_factor: "SMALL"
@@ -55,7 +55,7 @@ edge_transport_nodes:
         default_gateway_addresses: 
         - 10.1.20.254
         management_port_subnets: 
-        - 255.255.255.0
+        - 10.1.20.2/24
         dns_servers: 10.1.22.10
         search_domains: dryicelabs.com
         allow_ssh_root_login: yes
