@@ -46,7 +46,7 @@ edge_transport_nodes:
         vc_name: "vcenter-iac"                  #display name used at the time of add compute manager
         vc_username: '{{ lookup("env", "VMWARE_USER") }}'
         vc_password: '{{ lookup("env", "VMWARE_PASSWORD") }}'
-        data_network:
+        data_networks:
         - vlan1002
         management_network: "esxi-dvpg"
         hostname: "Edgenode01"
