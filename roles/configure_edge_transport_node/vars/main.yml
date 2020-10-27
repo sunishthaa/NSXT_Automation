@@ -34,7 +34,7 @@ edge_transport_nodes:
   node_deployment_info:
     resource_type: "EdgeNode"
     display_name: "iacedge01.dryicelabs.com"
-    ip_addresses:["10.1.20.2"]
+    ip_addresses: ["10.1.20.2"]
     deployment_type: "VIRTUAL_MACHINE"
     deployment_config:
       form_factor: "SMALL"
