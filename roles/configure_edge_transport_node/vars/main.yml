@@ -28,10 +28,9 @@ edge_transport_nodes:
       resource_type: StaticIpPoolSpec
       ip_pool_name: "TP-Edge_VM-VLAN_1004"
     transport_zone_endpoints:
-    - transport_zone_name: "TZ-VLAN"
-    - transport_zone_name: "TZ-Overlay"
-  #transport_zone_endpoints:
-  #- transport_zone_name: ["TZ-VLAN", "TZ-Overlay"]
+      - transport_zone_name: TZ-Overlay
+      - transport_zone_name: TZ-VLAN
+  transport_zone_endpoints: []
   node_deployment_info:
     resource_type: "EdgeNode"
     display_name: "iacedge01.dryicelabs.com"
