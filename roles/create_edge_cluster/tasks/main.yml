@@ -1,0 +1,13 @@
+---
+- name: Add edge cluster
+    nsxt_edge_clusters:
+      hostname: "{{ nsx_node1.nsxt_network_ip_address }}"
+      username: "{{ nsxt_username }}"
+      password: "{{ nsxt_password }}"
+      validate_certs: "{{ nsxt_validate_certs }}"
+      display_name: "{{ item.display_name }}"
+      cluster_profile_bindings: "{{ item.cluster_profile_bindings }}"
+      members: "{{ item.members }}"
+      state: "{{ state }}"
+    with_items:
+      - "{{ edge_clusters }}"
