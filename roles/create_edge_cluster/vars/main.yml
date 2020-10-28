@@ -1,4 +1,16 @@
 ---
+nsxt_ssh_enabled: true
+nsxt_validate_certs: false
+nsxt_status_check_delay: '50'
+nsxt_default_mtu: '1600'
+state: present
+nsx_node1: 
+  hostname: iacnsxm01.dryicelabs.com
+  nsxt_deployment_cluster: Compute-Cluster
+  nsxt_deployment_datacenter: IAC-PDC
+  nsxt_deployment_datastore: shared_storage_01
+  nsxt_deployment_portgroup: vlan1002
+  nsxt_network_ip_address: "10.1.22.3"
 edge_clusters:
   - display_name: Demo_Edge-Cluster-01
     cluster_profile_bindings:
