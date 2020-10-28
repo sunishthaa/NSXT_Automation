@@ -1,3 +1,7 @@
 ---
-
- #defaults file for iis_demo
+edge_clusters:
+  - display_name: Demo_Edge-Cluster-01
+    cluster_profile_bindings:
+      - profile_name: nsx-default-edge-high-availability-profile
+    members:
+      - transport_node_name: Edge-Node-1
