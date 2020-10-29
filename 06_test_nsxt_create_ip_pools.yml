@@ -1,8 +1,8 @@
 ---
 - hosts: localhost
-  pre_tasks:
-    - name: including roles variables
-      include_vars: group_vars/all/common.yml
+  #pre_tasks:
+   # - name: including roles variables
+    #  include_vars: group_vars/all/common.yml
 
   roles:
     - nsxt_create_ip_pools
