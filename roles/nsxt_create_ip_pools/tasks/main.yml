@@ -3,8 +3,8 @@
 - name: Create IP Pools "{{item.display_name}}"
   nsxt_policy_ip_pool:
     hostname: "{{ nsx_node1.nsxt_network_ip_address }}"
-    username: "{{ nsxt_username }}"
-    password: "{{ nsxt_password }}"
+    username: "{{ nsxt_admin_username }}"
+    password: "{{ nsxt_admin_password }}"
     validate_certs: "{{ nsxt_validate_certs }}"
     display_name: "{{ item.display_name }}"
     pool_static_subnets: "{{ item.pool_static_subnets }}"
