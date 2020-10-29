@@ -6,10 +6,10 @@ This Repository comprise of NSX-T Modules for Ansible. The Base module and libra
 
 Prerequisites:
 
-	Ansible or Ansible tower Installed
-	Python3 >= 3.6.8
-	PyVmOmi - Python library for vCenter api.(install using-- pip install --upgrade pyvmomi pyvim requests ssl)
-	OVF Tools - Ovftool is used for ovf deployment.(
+	Ansible or Ansible tower Installed
+	Python3 >= 3.6.8
+	PyVmOmi - Python library for vCenter api.(install using-- pip install --upgrade pyvmomi pyvim requests ssl)
+	OVF Tools - Ovftool is used for ovf deployment.(
      https://www.virtual-odyssey.com/2017/11/26/install-vmware-ovftool-ubuntu/ 
   https://my.vmware.com/web/vmware/downloads/details?downloadGroup=OVFTOOL430&productId=742 )
 
@@ -41,19 +41,5 @@ Example:
 
 
 
-
-
-
-
-
-
-Regards,
-Ravi Joshi
-Cloud Consultant – DryICE Autonomics
-+918860233308
- 
-Follow us on Channel: http://satori2.hcl.com/webinars/autonomics
-
-Planned Leaves : None
 
 
